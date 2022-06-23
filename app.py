@@ -11,6 +11,7 @@ from resources.store import Store, StoreList
 app= Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'sqlite:///data.db')
 app.config['SQLACHEMY_TRACK_MODIFICATION'] = False
+app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'jose' #app.config['JWT_SECRET_KEY']
 api = Api(app)
 
